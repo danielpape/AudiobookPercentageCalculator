@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,72 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AudiobookPercentageCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3F-Et-K20">
+                                <rect key="frame" x="16" y="135" width="343" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="gne-aU-QMx"/>
+                                </constraints>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ype-ER-2s1">
+                                <rect key="frame" x="16" y="345" width="343" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="JRh-ah-6hp"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listened" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdh-RS-IwI">
+                                <rect key="frame" x="32" y="89" width="311" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGe-pW-okq">
+                                <rect key="frame" x="32" y="299" width="311" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3R2-Jb-0Hh">
+                                <rect key="frame" x="16" y="453" width="343" height="76.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ype-ER-2s1" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4US-z1-xT7"/>
+                            <constraint firstItem="uGe-pW-okq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="6Vh-Fq-rTQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3R2-Jb-0Hh" secondAttribute="trailing" constant="16" id="ARX-cX-ZOr"/>
+                            <constraint firstItem="zdh-RS-IwI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="MnR-dh-tvg"/>
+                            <constraint firstItem="3R2-Jb-0Hh" firstAttribute="top" secondItem="Ype-ER-2s1" secondAttribute="bottom" constant="8" id="O46-OX-ZOH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uGe-pW-okq" secondAttribute="trailing" constant="32" id="PLT-Hw-X7E"/>
+                            <constraint firstItem="c3F-Et-K20" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="WFW-I6-G2J"/>
+                            <constraint firstItem="Ype-ER-2s1" firstAttribute="top" secondItem="uGe-pW-okq" secondAttribute="bottom" constant="7" id="Za0-tN-Av6"/>
+                            <constraint firstItem="c3F-Et-K20" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fkt-B4-k92"/>
+                            <constraint firstItem="uGe-pW-okq" firstAttribute="top" secondItem="c3F-Et-K20" secondAttribute="bottom" constant="64" id="fmf-8I-cc9"/>
+                            <constraint firstItem="c3F-Et-K20" firstAttribute="top" secondItem="zdh-RS-IwI" secondAttribute="bottom" constant="7" id="fsL-XU-Q8O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zdh-RS-IwI" secondAttribute="trailing" constant="32" id="gmI-xb-wev"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c3F-Et-K20" secondAttribute="trailing" constant="16" id="k4r-pl-0IT"/>
+                            <constraint firstItem="Ype-ER-2s1" firstAttribute="top" secondItem="uGe-pW-okq" secondAttribute="bottom" constant="7" id="kYX-6a-D1N"/>
+                            <constraint firstItem="3R2-Jb-0Hh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pEe-D2-a9I"/>
+                            <constraint firstItem="Ype-ER-2s1" firstAttribute="leading" secondItem="c3F-Et-K20" secondAttribute="leading" id="tIU-3I-6p6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="PercentageLabel" destination="3R2-Jb-0Hh" id="QCH-ki-fYB"/>
+                        <outlet property="ProgressPicker" destination="c3F-Et-K20" id="sgQ-3P-Z96"/>
+                        <outlet property="TotalPicker" destination="Ype-ER-2s1" id="cgF-Tf-EbG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
